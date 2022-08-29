@@ -4,7 +4,7 @@
     热销推荐
   </div>
   <ul>
-    <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+    <li class="item border-bottom" v-for="item of list" :key="item.id">
         <img class="item-img" :src="item.imgUrl" alt="">
       <div class="item-info">
       <p class="item-title">{{item.title}}</p>
@@ -21,30 +21,9 @@
 <script>
   export default {
     name:'HomeRecommend',
-    data(){
-      return{
-        recommendList:[
-          {
-            id:'0001',
-            imgUrl:'https://img1.qunarzz.com/sight/p0/1805/78/789e31213399290fa3.water.jpg_256x160_c7b5500c.jpg',
-            title:'白石山世界地质公园',
-            desc:'体验悬空玻璃栈道白石山景区'
-          },
-           {
-            id:'0002',
-            imgUrl:'https://img1.qunarzz.com/sight/p0/1805/78/789e31213399290fa3.water.jpg_256x160_c7b5500c.jpg',
-            title:'白石山世界地质公园',
-            desc:'体验悬空玻璃栈道白石山景区'
-          },
-           {
-            id:'0003',
-            imgUrl:'https://img1.qunarzz.com/sight/p0/1805/78/789e31213399290fa3.water.jpg_256x160_c7b5500c.jpg',
-            title:'白石山世界地质公园',
-            desc:'体验悬空玻璃栈道白石山景区'
-          }
-        ]
-      }
-    }
+    props:{
+      list:Array
+    },
 
   }
 </script>

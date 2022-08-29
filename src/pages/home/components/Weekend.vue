@@ -4,7 +4,7 @@
     周末去哪儿
   </div>
   <ul>
-    <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+    <li class="item border-bottom" v-for="item of list" :key="item.id">
         <div class="item-img-wrapper">
         <img class="item-img" :src="item.imgUrl" alt="">
         </div>
@@ -23,31 +23,9 @@
 <script>
   export default {
     name:'HomeWeekend',
-    data(){
-      return{
-        recommendList:[
-          {
-            id:'0001',
-            imgUrl:'https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/7d9b233c71cad13ded0013f9c9cec635.jpg',
-            title:'白石山世界地质公园',
-            desc:'体验悬空玻璃栈道白石山景区'
-          },
-           {
-            id:'0002',
-            imgUrl:'https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/7d9b233c71cad13ded0013f9c9cec635.jpg',
-            title:'白石山世界地质公园',
-            desc:'体验悬空玻璃栈道白石山景区'
-          },
-           {
-            id:'0003',
-            imgUrl:'https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/7d9b233c71cad13ded0013f9c9cec635.jpg',
-            title:'白石山世界地质公园',
-            desc:'体验悬空玻璃栈道白石山景区'
-          }
-        ]
-      }
+    props:{
+      list:Array
     }
-
   }
 </script>
 <!-- min-width:0文本过多，在同行显示三个点 -->
