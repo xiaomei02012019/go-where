@@ -73,12 +73,12 @@
         color #fff
         background $bgColor
         font-size .32rem
-        .header-fixed-back
-            position absolute
-            top 0
-            left 0
-            width .64rem
-            text-align center
-            font-size .32rem
-            color #fff
+    .header-fixed-back
+         position absolute
+         top 0
+         left 0
+         width .64rem
+         text-align center
+         font-size .32rem
+         color #fff
 </style>

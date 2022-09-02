@@ -7,7 +7,7 @@
 				<div class="button-wrapper">
 					<div class="button">{{this.currentCity}}</div>
 				</div>
-			</div>
+			</div> 
 		</div>
     <div class="area">
       <div class="title border-topbottom">热门城市</div>
