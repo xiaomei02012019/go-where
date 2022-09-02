@@ -14,7 +14,7 @@ import CitySearch from './components/Search.vue'
 import CityList from './components/List.vue'
 import CityAlphabet from './components/Alphabet.vue'
 export default {
-  name:"City",
+  name:"MyCity",
   components:{
     CityHeader,
     CitySearch,

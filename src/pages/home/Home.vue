@@ -1,6 +1,6 @@
 <template>
  <div>
-	<home-header :city="city"></home-header>
+	<home-header ></home-header>
 	<home-swiper :list="swiperList"></home-swiper>
 	<home-icons :list="iconList"></home-icons>
 	<home-recommend :list="recommendList"></home-recommend>
@@ -21,7 +21,7 @@ export default {
 	components: { HomeHeader ,HomeSwiper,HomeIcons,HomeRecommend,HomeWeekend},
 	data(){
       return{
-		city:'',
+
 		swiperList:[],
 		iconList:[],
 		recommendList:[],
@@ -39,7 +39,7 @@ export default {
       console.log("mxm1",res)
 		if(res.ret && res.data){
 		   const data=res.data
-           this.city=data.city //城市
+
 		   this.swiperList=data.swiperList  //焦点轮播图
 		   this.iconList=data.iconList  //导航图标
 		   this.recommendList=data.recommendList//热门推荐 
