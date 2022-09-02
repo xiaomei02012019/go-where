@@ -36,6 +36,7 @@ export default {
 	  },
 	  getHomeInfoSucc(res){
 	     res=res.data
+      console.log("mxm1",res)
 		if(res.ret && res.data){
 		   const data=res.data
            this.city=data.city //城市

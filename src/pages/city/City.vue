@@ -1,43 +1,53 @@
 <template>
-	<div>
-		<city-header></city-header>
-		<city-search></city-search>
-		<city-list :cities="cities" :hot="hotCities"></city-list>
-    <city-alphabet :cities="cities"></city-alphabet>
-	</div>
+  <div>
+    <city-header></city-header>
+    <city-search :cities="cities"></city-search>
+    <city-list :cities="cities" :hot="hotCities" :letter="letter"></city-list>
+    <city-alphabet :cities="cities" @change="handleLetterChange"></city-alphabet>
+  </div>
 </template>
 
 <script>
 import axios from 'axios'
-import CityHeader from './components/Header.vue';
-import CitySearch from './components/Search.vue';
-import CityList from './components/List.vue';
-import CityAlphabet from "./components/Alphabet.vue";
+import CityHeader from './components/Header.vue'
+import CitySearch from './components/Search.vue'
+import CityList from './components/List.vue'
+import CityAlphabet from './components/Alphabet.vue'
 export default {
-	name: "MyCity",
+  name:"City",
+  components:{
+    CityHeader,
+    CitySearch,
+    CityList,
+    CityAlphabet
+  },
   data(){
-    return{
+    return {
       cities:{},
       hotCities:[],
+      letter:''
     }
   },
-	components: {CityAlphabet, CityHeader, CitySearch, CityList },
   methods:{
     getCityInfo(){
       axios.get('/api/city.json')
-      .then(this.handleGetCityInfoSucc)
+          .then(this.handleGetCityInfoSucc)
     },
     handleGetCityInfoSucc(res){
-      // console.log(res)
-    res=res.data
-      if(res.ret &&res.data){
+      res=res.data
+      console.log(res)
+      if(res.ret  && res.data){
         const data=res.data
+        console.log(data.hotCities)
         this.cities=data.cities
         this.hotCities=data.hotCities
       }
+    },
+    handleLetterChange(letter){
+      this.letter=letter
     }
   },
-  mounted() {
+  mounted(){
     this.getCityInfo()
   }
 }

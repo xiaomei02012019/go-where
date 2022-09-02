@@ -19,6 +19,9 @@
     props:{
       list:Array
     },
+    mounted() {
+      console.log("mxm",this.list)
+    },
     data(){
       return{
         swiperOption:{
