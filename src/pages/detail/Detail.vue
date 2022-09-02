@@ -14,7 +14,7 @@
 	import DetailList from './componments/List.vue'
 	import axios from 'axios'
 	export default {
-		name:'Detail',
+		name:'MyDetail',
 		components:{
 			DetailBanner,
 			DetailHeader,
@@ -42,7 +42,7 @@
 		},
 		methods:{
 			getDetailInfo(){
-                // axios.get('/api/detail/json?id='+this.$route.params.id)
+                 axios.get('/api/detail/json?id='+this.$route.params.id)
 			}
 		},
 		mounted(){
