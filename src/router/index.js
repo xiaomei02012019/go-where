@@ -22,5 +22,9 @@ export default new Router({
       name: 'Detail',
       component: Detail
     }
-  ]
+  ],
+  //首页向下滑动，不会影响详情页面
+  scrollBehavior (){
+    return {x:0,y:0}
+  }
 })

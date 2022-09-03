@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" exclude="MyDetail">
 	<keep-alive>
         <router-view/>
 	</keep-alive>
@@ -9,6 +9,7 @@
 <script>
 export default {
   name: 'App'
+
 }
 </script>
 
